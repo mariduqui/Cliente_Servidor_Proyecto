@@ -1,6 +1,7 @@
 
 package Vista;
 
+import Controlador.ControladorCBO;
 import Controlador.ControladorRegistro;
 
 /**
@@ -16,6 +17,10 @@ public class Registro extends javax.swing.JFrame {
         initComponents();
         this.setSize(650, 650);
         this.setLocationRelativeTo(null);
+        
+        ControladorCBO conCBO = new ControladorCBO();
+        conCBO.llenarPaises(cboNacionalidad);
+        conCBO.llenarCodigo(cboCodigo);
     }
 
     
@@ -94,7 +99,7 @@ public class Registro extends javax.swing.JFrame {
         lblTipoID.setText("Tipo de Identificación:");
         getContentPane().add(lblTipoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
-        cboTipoID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cboTipoID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cedula Nacional", "DIMEX", "Pasaporte" }));
         getContentPane().add(cboTipoID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 240, -1));
 
         lblTelefono.setText("Número Telefonico:");
@@ -109,7 +114,6 @@ public class Registro extends javax.swing.JFrame {
         lblNacionalidad.setText("Nacionalidad:");
         getContentPane().add(lblNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
-        cboNacionalidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Costa Rica" }));
         getContentPane().add(cboNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 240, -1));
 
         lblIdentificacion.setText("Identificación:");
@@ -130,7 +134,7 @@ public class Registro extends javax.swing.JFrame {
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         ControladorRegistro cr  = new ControladorRegistro();
         
-        cr.registrarUser(txtUser.getText(), txtPass1.getText(), txtNombre.getText(), txtApellido1.getText(), txtApellido2.getText(), txtID.getText(), cboNacionalidad.getSelectedItem().toString(), txtTelefono.getText(), txtEmail.getText());
+        cr.verificarDatosPreRegistro(txtUser.getText(), txtPass1.getText(), txtPass2.getText(),txtNombre.getText() , txtApellido1.getText(), txtApellido2.getText(), cboTipoID.getSelectedItem().toString(), txtID.getText(), cboNacionalidad.getSelectedItem().toString(), cboCodigo.getSelectedItem().toString(), txtTelefono.getText(), txtEmail.getText());
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     
