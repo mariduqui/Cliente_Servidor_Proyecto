@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Controlador.ControladorLogin;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,7 +42,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cboTipo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnLogIn1 = new javax.swing.JButton();
 
@@ -70,8 +71,8 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 350, 40));
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 240, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Admin" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 150, -1));
+        cboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Admin" }));
+        getContentPane().add(cboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 150, -1));
 
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
@@ -94,7 +95,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     private void btnLogIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogIn1ActionPerformed
-        // TODO add your handling code here:
+        ControladorLogin cl = new ControladorLogin();
+        
+        if(cl.login(txtUser.getText(), txtPassword.getText(), cboTipo.getSelectedItem().toString())){
+            this.setVisible(false);
+            MenuUser mu = new MenuUser();
+            mu.setVisible(true);
+        }
     }//GEN-LAST:event_btnLogIn1ActionPerformed
 
     /**
@@ -136,7 +143,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogIn1;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

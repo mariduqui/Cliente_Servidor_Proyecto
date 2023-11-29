@@ -3,6 +3,9 @@ package Vista;
 
 import Controlador.ControladorCBO;
 import Controlador.ControladorRegistro;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,9 @@ public class Registro extends javax.swing.JFrame {
         ControladorCBO conCBO = new ControladorCBO();
         conCBO.llenarPaises(cboNacionalidad);
         conCBO.llenarCodigo(cboCodigo);
+        
+        Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
+        btnVolver.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver.getWidth(), btnVolver.getHeight(), Image.SCALE_SMOOTH)));
     }
 
     
@@ -55,6 +61,7 @@ public class Registro extends javax.swing.JFrame {
         lblIdentificacion = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         btnRegistrarse = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -128,6 +135,13 @@ public class Registro extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 550, 160, 40));
 
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -136,6 +150,13 @@ public class Registro extends javax.swing.JFrame {
         
         cr.verificarDatosPreRegistro(txtUser.getText(), txtPass1.getText(), txtPass2.getText(),txtNombre.getText() , txtApellido1.getText(), txtApellido2.getText(), cboTipoID.getSelectedItem().toString(), txtID.getText(), cboNacionalidad.getSelectedItem().toString(), cboCodigo.getSelectedItem().toString(), txtTelefono.getText(), txtEmail.getText());
     }//GEN-LAST:event_btnRegistrarseActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        this.setVisible(false);
+        
+        Login log = new Login();
+        log.setVisible(true);
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     
     public static void main(String args[]) {
@@ -149,6 +170,7 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JComboBox<String> cboCodigo;
     private javax.swing.JComboBox<String> cboNacionalidad;
     private javax.swing.JComboBox<String> cboTipoID;

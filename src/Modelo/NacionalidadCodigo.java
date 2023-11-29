@@ -44,7 +44,7 @@ public class NacionalidadCodigo {
         ArrayList<String> codigo = new ArrayList();
         
         try{
-        String query = "SELECT phonecode FROM country ORDER BY phonecode ASC";
+        String query = "SELECT DISTINCT phonecode FROM country ORDER BY phonecode ASC";
         
         PreparedStatement ps = cn.prepareStatement(query);
         
