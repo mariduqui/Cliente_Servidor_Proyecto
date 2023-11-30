@@ -23,7 +23,22 @@ public class ModificarReserva {
             query = "UPDATE reservasNY "
                         + "SET fechaIngreso = ?, fechaSalida  = ? "
                         + "WHERE idreserva = ?";
-        } 
+        }
+        else if(hotel.equals("Roma")){       
+            query = "UPDATE reservasRoma "
+                        + "SET fechaIngreso = ?, fechaSalida  = ? "
+                        + "WHERE idreserva = ?";
+        }
+        else if(hotel.equals("Marruecos")){       
+            query = "UPDATE reservasMarruecos "
+                        + "SET fechaIngreso = ?, fechaSalida  = ? "
+                        + "WHERE idreserva = ?";
+        }
+        else if(hotel.equals("Tokyo")){       
+            query = "UPDATE reservasTokyo "
+                        + "SET fechaIngreso = ?, fechaSalida  = ? "
+                        + "WHERE idreserva = ?";
+        }
         
          try {
              Connection cn = con.conectar();

@@ -24,8 +24,8 @@ public class LogicaReserva {
         
         if(hotel.equals("NY")){
             queryHotel = "INSERT INTO reservasNY(idusuario, idHab, fechaIngreso, fechaSalida) "
-                    + "SELECT l.id, h.idHab, ?, ?  "
-                    + "FROM loggeado l, habitacionesNY h "
+                    + "SELECT ?, h.idHab, ?, ?  "
+                    + "FROM habitacionesNY h "
                     + "WHERE h.disponible = true "
                     + "LIMIT 1";
             
@@ -35,8 +35,8 @@ public class LogicaReserva {
         } 
         else if(hotel.equals("Roma")){
             queryHotel = "INSERT INTO reservasRoma(idusuario, idHab, fechaIngreso, fechaSalida) "
-                    + "SELECT l.id, h.idHab, ?, ?  "
-                    + "FROM loggeado l, habitacionesRoma h "
+                    + "SELECT ?, h.idHab, ?, ?  "
+                    + "FROM habitacionesRoma h "
                     + "WHERE h.disponible = true "
                     + "LIMIT 1";
             
@@ -46,8 +46,8 @@ public class LogicaReserva {
         }
         else if(hotel.equals("Marruecos")){
             queryHotel = "INSERT INTO reservasMarruecos(idusuario, idHab, fechaIngreso, fechaSalida) "
-                    + "SELECT l.id, h.idHab, ?, ?  "
-                    + "FROM loggeado l, habitacionesMarruecos h "
+                    + "SELECT ?, h.idHab, ?, ?  "
+                    + "FROM habitacionesMarruecos h "
                     + "WHERE h.disponible = true "
                     + "LIMIT 1";
             
@@ -57,8 +57,8 @@ public class LogicaReserva {
         }
         else if(hotel.equals("Tokyo")){
             queryHotel = "INSERT INTO reservasTokyo(idusuario, idHab, fechaIngreso, fechaSalida) "
-                    + "SELECT l.id, h.idHab, ?, ?  "
-                    + "FROM loggeado l, habitacionesTokyo h "
+                    + "SELECT ?, h.idHab, ?, ?  "
+                    + "FROM habitacionesTokyo h "
                     + "WHERE h.disponible = true "
                     + "LIMIT 1";
             
@@ -69,9 +69,11 @@ public class LogicaReserva {
         
 
         try {
+            Persona p = new Persona();
             PreparedStatement ps = cn.prepareStatement(queryHotel);
-            ps.setDate(1, fechaIng);
-            ps.setDate(2, fechaSal);
+            ps.setInt(1, p.getId());
+            ps.setDate(2, fechaIng);
+            ps.setDate(3, fechaSal);
             ps.executeUpdate();
             
             PreparedStatement psu = cn.prepareStatement(queryUpdate);

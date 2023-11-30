@@ -15,6 +15,8 @@ public class MostrarReservasUser {
     }
     
     public void  mostrarReservasUser(JTable tabla){
+        Persona p = new Persona();
+        
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Hotel");
         modelo.addColumn("ID Reserva");
@@ -23,15 +25,16 @@ public class MostrarReservasUser {
         
         Conexion con = new Conexion();
         
-        String queryNY = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasNY WHERE idusuario = (SELECT id FROM loggeado)";
-        String queryRoma = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasRoma WHERE idusuario = (SELECT id FROM loggeado)";
-        String queryMarruecos = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasMarruecos WHERE idusuario = (SELECT id FROM loggeado)";
-        String queryTokyo = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasTokyo WHERE idusuario = (SELECT id FROM loggeado)";
+        String queryNY = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasNY WHERE idusuario = ?";
+        String queryRoma = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasRoma WHERE idusuario = ?";
+        String queryMarruecos = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasMarruecos WHERE idusuario = ?";
+        String queryTokyo = "SELECT idreserva, fechaIngreso, fechaSalida FROM reservasTokyo WHERE idusuario = ?";
         
         try{
             Connection cn = con.conectar();
             
             PreparedStatement statementNY = cn.prepareStatement(queryNY);
+            statementNY.setInt(1, p.getId());
             ResultSet setNY = statementNY.executeQuery();
             
             while(setNY.next()){
@@ -42,6 +45,7 @@ public class MostrarReservasUser {
             setNY.close();
             
             PreparedStatement statementRoma = cn.prepareStatement(queryRoma);
+            statementRoma.setInt(1, p.getId());
             ResultSet setRoma = statementRoma.executeQuery();
             
             while(setRoma.next()){
@@ -52,6 +56,7 @@ public class MostrarReservasUser {
             setRoma.close();
             
             PreparedStatement statementMarruecos = cn.prepareStatement(queryMarruecos);
+            statementMarruecos.setInt(1, p.getId());
             ResultSet setMarruecos = statementMarruecos.executeQuery();
             
             while(setMarruecos.next()){
@@ -62,6 +67,7 @@ public class MostrarReservasUser {
             setMarruecos.close();
             
             PreparedStatement statementTokyo = cn.prepareStatement(queryTokyo);
+            statementTokyo.setInt(1, p.getId());
             ResultSet setTokyo = statementTokyo.executeQuery();
             
             while(setTokyo.next()){

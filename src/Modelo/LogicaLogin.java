@@ -32,8 +32,8 @@ public class LogicaLogin {
             if(set.next() && tipo.equalsIgnoreCase("Usuario")){
                 existe = true;
                 int id = set.getInt(1);
-                Persona p = new Persona(set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10));
-                
+                Persona p = new Persona(id, set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10));
+                /*
                 String limpiarActualmente = "DELETE FROM loggeado";
                 PreparedStatement ps = cn.prepareStatement(limpiarActualmente);
                 ps.executeUpdate();
@@ -41,7 +41,7 @@ public class LogicaLogin {
                 String actualmente = "INSERT INTO loggeado(id) VALUES(?)";
                 PreparedStatement psa = cn.prepareStatement(actualmente);
                 psa.setInt(1, id);
-                psa.executeUpdate();
+                psa.executeUpdate();*/
             }
             if(set.next() && tipo.equalsIgnoreCase("Admin")){
                 existe = true;

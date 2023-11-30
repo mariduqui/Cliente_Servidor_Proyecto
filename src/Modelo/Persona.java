@@ -6,6 +6,9 @@ package Modelo;
  * @author alede
  */
 public class Persona {
+    private static int id; 
+
+    
     private String user;
     private String password;
     private String nombre;
@@ -19,7 +22,8 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String user, String password, String nombre, String apellido1, String apellido2, String cedula, String nacionalidad, String telefono, String correo) {
+    public Persona(int id, String user, String password, String nombre, String apellido1, String apellido2, String cedula, String nacionalidad, String telefono, String correo) {
+        this.id = id;
         this.user = user;
         this.password = password;
         this.nombre = nombre;
@@ -29,6 +33,14 @@ public class Persona {
         this.nacionalidad = nacionalidad;
         this.telefono = telefono;
         this.correo = correo;
+    }
+
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int aId) {
+        id = aId;
     }
 
     public String getUser() {

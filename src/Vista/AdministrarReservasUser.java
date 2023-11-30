@@ -77,9 +77,20 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblReservas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 720, 150));
+
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 20));
 
         chkTokyo.setText("Hotel Continental Tokyo");
+        chkTokyo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkTokyoActionPerformed(evt);
+            }
+        });
         getContentPane().add(chkTokyo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, -1, -1));
 
         chkNY.setText("Hotel Continental NY");
@@ -91,9 +102,19 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         getContentPane().add(chkNY, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         chkRoma.setText("Hotel Continental Roma");
+        chkRoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkRomaActionPerformed(evt);
+            }
+        });
         getContentPane().add(chkRoma, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
 
         chkMarruecos.setText("Hotel Continental Marruecos");
+        chkMarruecos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkMarruecosActionPerformed(evt);
+            }
+        });
         getContentPane().add(chkMarruecos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
         getContentPane().add(fechaSal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 160, -1));
         getContentPane().add(fechaIng, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 160, -1));
@@ -139,6 +160,39 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             chkTokyo.setSelected(false);
         }
     }//GEN-LAST:event_chkNYActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        MenuUser mu = new MenuUser();
+        this.setVisible(false);
+        mu.setVisible(true);
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void chkRomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkRomaActionPerformed
+        if(chkRoma.isSelected()){
+            hotel = "Roma";
+            chkNY.setSelected(false);
+            chkMarruecos.setSelected(false);
+            chkTokyo.setSelected(false);
+        }
+    }//GEN-LAST:event_chkRomaActionPerformed
+
+    private void chkMarruecosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMarruecosActionPerformed
+        if(chkMarruecos.isSelected()){
+            hotel = "Marruecos";
+            chkNY.setSelected(false);
+            chkRoma.setSelected(false);
+            chkTokyo.setSelected(false);
+        }
+    }//GEN-LAST:event_chkMarruecosActionPerformed
+
+    private void chkTokyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTokyoActionPerformed
+        if(chkTokyo.isSelected()){
+            hotel = "Tokyo";
+            chkNY.setSelected(false);
+            chkRoma.setSelected(false);
+            chkMarruecos.setSelected(false);
+        }
+    }//GEN-LAST:event_chkTokyoActionPerformed
 
 
     public static void main(String args[]) {

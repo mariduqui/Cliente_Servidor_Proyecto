@@ -56,6 +56,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        lblHotel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,11 +94,11 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMarruecos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 190, 110));
-        getContentPane().add(fechaSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 150, -1));
-        getContentPane().add(fechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 150, -1));
+        getContentPane().add(fechaSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 150, -1));
+        getContentPane().add(fechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 150, -1));
 
         lblSalida.setText("Fecha Salida:");
-        getContentPane().add(lblSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
+        getContentPane().add(lblSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
 
         lblNY1.setText("Hotel Continental NY");
         getContentPane().add(lblNY1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
@@ -112,7 +113,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         getContentPane().add(lblTokyo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         lblIngreso1.setText("Fecha Ingreso:");
-        getContentPane().add(lblIngreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+        getContentPane().add(lblIngreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Seleccione las fechas de su reserva, una vez las tenga haga click sobre el hotel.");
@@ -124,7 +125,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 120, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, 120, 40));
 
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,11 +134,15 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         });
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 30));
 
+        lblHotel.setText("Reservar en el Hotel Continental de:");
+        getContentPane().add(lblHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNYActionPerformed
         hotel = "NY";
+        lblHotel.setText("Reservar en el Hotel Continental de: " + hotel);
     }//GEN-LAST:event_btnNYActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -151,14 +156,17 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
 
     private void btnRomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRomaActionPerformed
         hotel = "Roma";
+        lblHotel.setText("Reservar en el Hotel Continental de: " + hotel);
     }//GEN-LAST:event_btnRomaActionPerformed
 
     private void btnMarruecosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarruecosActionPerformed
         hotel = "Marruecos";
+        lblHotel.setText("Reservar en el Hotel Continental de: " + hotel);
     }//GEN-LAST:event_btnMarruecosActionPerformed
 
     private void btnTokyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTokyoActionPerformed
         hotel = "Tokyo";
+        lblHotel.setText("Reservar en el Hotel Continental de: " + hotel);
     }//GEN-LAST:event_btnTokyoActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -211,6 +219,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel lblHotel;
     private javax.swing.JLabel lblIngreso1;
     private javax.swing.JLabel lblMarruecos1;
     private javax.swing.JLabel lblNY1;
