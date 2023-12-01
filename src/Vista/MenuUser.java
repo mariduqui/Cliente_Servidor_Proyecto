@@ -1,6 +1,11 @@
 
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author alede
@@ -11,8 +16,11 @@ public class MenuUser extends javax.swing.JFrame {
     public MenuUser() {
         initComponents();
         
-        this.setSize(365, 550);
+        this.setSize(550, 500);
         this.setLocationRelativeTo(null);
+        
+        Image interiorHotel = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/InteriorHotel.jpg"));
+        frameFoto.setIcon(new ImageIcon(interiorHotel.getScaledInstance(frameFoto.getWidth(), frameFoto.getHeight(), Image.SCALE_SMOOTH)));
     }
 
     
@@ -23,6 +31,7 @@ public class MenuUser extends javax.swing.JFrame {
         btnModReserva = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        frameFoto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -33,7 +42,7 @@ public class MenuUser extends javax.swing.JFrame {
                 btnModReservaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnModReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 170, 60));
+        getContentPane().add(btnModReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 150, 60));
 
         jButton2.setText("Reservar Habitación");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -41,13 +50,14 @@ public class MenuUser extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 151, 170, 64));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 150, 60));
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 153, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Menú Principal");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 350, 40));
+        jLabel12.setText("Bienvenido a los Hoteles Continental");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 530, 90));
+        getContentPane().add(frameFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 430, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,6 +109,7 @@ public class MenuUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnModReserva;
+    private javax.swing.JButton frameFoto;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel12;
     // End of variables declaration//GEN-END:variables
