@@ -148,10 +148,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ControladorReserva cr  = new  ControladorReserva();
         cr.reservaUsuario(hotel, fechaIngreso.getDate(), fechaSalida.getDate());
-        this.setVisible(false);
         
-        MenuUser mu = new MenuUser();
-        mu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnRomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRomaActionPerformed

@@ -121,6 +121,11 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         getContentPane().add(txtIdReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 140, -1));
 
         btnEliminarReserva.setText("Eliminar Reserva");
+        btnEliminarReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarReservaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnEliminarReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 130, -1));
 
         btnModFecha1.setText("Modificar Fecha");
@@ -193,6 +198,14 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             chkMarruecos.setSelected(false);
         }
     }//GEN-LAST:event_chkTokyoActionPerformed
+
+    private void btnEliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarReservaActionPerformed
+        ControladorModificarReserva cmr = new ControladorModificarReserva();
+        cmr.elimarReservaUser(hotel, Integer.parseInt(txtIdReserva.getText()));
+        
+        ControladorMostrarReservas cmru  = new  ControladorMostrarReservas();
+        cmru.MostrarReservasUser(tblReservas);
+    }//GEN-LAST:event_btnEliminarReservaActionPerformed
 
 
     public static void main(String args[]) {
