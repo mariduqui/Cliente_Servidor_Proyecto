@@ -124,6 +124,10 @@ public class LogicaReserva {
             queryUpdate = "UPDATE habitacionesRoma "
                         + "SET disponible = false "
                         + "WHERE idHab = ?";
+            
+            queryBuscarHab = "SELECT * FROM habitacionesRoma "
+                           + "WHERE idHab = ? "
+                           + "AND disponible = true";
         }
         else if(hotel.equals("Marruecos")){
             queryHotel = "INSERT INTO reservasMarruecos(idusuario, idHab, fechaIngreso, fechaSalida) "
@@ -132,6 +136,10 @@ public class LogicaReserva {
             queryUpdate = "UPDATE habitacionesMarruecos "
                         + "SET disponible = false "
                         + "WHERE idHab = ?";
+            
+            queryBuscarHab = "SELECT * FROM habitacionesMarruecos "
+                           + "WHERE idHab = ? "
+                           + "AND disponible = true";
         }
         else if(hotel.equals("Tokyo")){
             queryHotel = "INSERT INTO reservasTokyo(idusuario, idHab, fechaIngreso, fechaSalida) "
@@ -140,6 +148,10 @@ public class LogicaReserva {
             queryUpdate = "UPDATE habitacionesTokyo "
                         + "SET disponible = false "
                         + "WHERE idHab = ?";
+            
+            queryBuscarHab = "SELECT * FROM habitacionesTokyo "
+                           + "WHERE idHab = ? "
+                           + "AND disponible = true";
         }
         
 
