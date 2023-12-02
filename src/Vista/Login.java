@@ -97,10 +97,15 @@ public class Login extends javax.swing.JFrame {
     private void btnLogIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogIn1ActionPerformed
         ControladorLogin cl = new ControladorLogin();
         
-        if(cl.login(txtUser.getText(), txtPassword.getText(), cboTipo.getSelectedItem().toString())){
+        if(cboTipo.getSelectedItem().toString().equalsIgnoreCase("Usuario") && cl.login(txtUser.getText(), txtPassword.getText(), cboTipo.getSelectedItem().toString())){
             this.setVisible(false);
             MenuUser mu = new MenuUser();
             mu.setVisible(true);
+        }
+        else if(cboTipo.getSelectedItem().toString().equalsIgnoreCase("Admin") && cl.login(txtUser.getText(), txtPassword.getText(), cboTipo.getSelectedItem().toString())){
+            this.setVisible(false);
+            MenuAdmin ma = new MenuAdmin();
+            ma.setVisible(true);
         }
     }//GEN-LAST:event_btnLogIn1ActionPerformed
 

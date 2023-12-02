@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/proyectoclienteservidor/Main.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Modelo/NacionalidadCodigo.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Modelo/LogicaLogin.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Controlador/ControladorCBO.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Vista/Registro.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Controlador/ControladorRegistro.java</file>
-            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Modelo/VerificarDatosRegistro.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Vista/ReservarHabitacionUser.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Vista/MenuUser.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Vista/AdministrarReservasUser.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Controlador/ControladorMostrarReservas.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Controlador/ControladorModificarReserva.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Controlador/ControladorReserva.java</file>
+            <file>file:/C:/Users/alede/OneDrive%20-%20Universidad%20Fidélitas/Tercer%20Cuatri/Cliente%20Servidor/ClienteServidorProyectoGIT/src/Modelo/ModificarReserva.java</file>
         </group>
     </open-files>
 </project-private>

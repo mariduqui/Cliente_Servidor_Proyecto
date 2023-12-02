@@ -19,8 +19,8 @@ public class LogicaLogin {
             if(tipo.equalsIgnoreCase("Usuario")){
                 query = "SELECT * FROM usuarios WHERE username = ? AND contrasena = ?"; 
             }
-            if(tipo.equalsIgnoreCase("Admin")){
-                query = "SELECT * FROM admin WHERE username = ? AND contrasena = ?"; 
+            else if(tipo.equalsIgnoreCase("Admin")){
+                query = "SELECT * FROM admins WHERE username = ? AND contrasena = ?"; 
             }
             
             PreparedStatement statement = cn.prepareStatement(query);
@@ -28,24 +28,16 @@ public class LogicaLogin {
             statement.setString(2, pass);
             
             ResultSet set = statement.executeQuery();
-            
-            if(set.next() && tipo.equalsIgnoreCase("Usuario")){
+
+            if(tipo.equalsIgnoreCase("Usuario") && set.next()){
                 existe = true;
                 int id = set.getInt(1);
-                Persona p = new Persona(id, set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10));
-                /*
-                String limpiarActualmente = "DELETE FROM loggeado";
-                PreparedStatement ps = cn.prepareStatement(limpiarActualmente);
-                ps.executeUpdate();
-                
-                String actualmente = "INSERT INTO loggeado(id) VALUES(?)";
-                PreparedStatement psa = cn.prepareStatement(actualmente);
-                psa.setInt(1, id);
-                psa.executeUpdate();*/
+                Persona p = new Persona(id, set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10));  
             }
-            if(set.next() && tipo.equalsIgnoreCase("Admin")){
+  
+            if(tipo.equalsIgnoreCase("Admin") && set.next()){
                 existe = true;
-                //Admin a = new Admin(set.getString(2), set.getString(4));
+                Admin a = new Admin(set.getString(4), set.getString(5));
             }
 
             cn.close();

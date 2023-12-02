@@ -6,31 +6,20 @@ package Modelo;
  * @author alede
  */
 public class Admin {
-    private String user;
-    private String tipo;
+    private static String tipo;
+    private static String hotel;
 
-    public Admin() {
-    }
-
-    public Admin(String user, String tipo) {
-        this.user = user;
+    public Admin(String tipo, String hotel) {
         this.tipo = tipo;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
+        this.hotel = hotel;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public String getHotel() {
+        return hotel;
     }
-      
+    
 }
