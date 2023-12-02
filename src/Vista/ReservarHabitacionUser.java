@@ -33,6 +33,8 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         
         Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
         btnVolver.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver.getWidth(), btnVolver.getHeight(), Image.SCALE_SMOOTH)));
+        
+        
     }
 
     
@@ -147,7 +149,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         ControladorReserva cr  = new  ControladorReserva();
-        cr.reservaUsuario(hotel, fechaIngreso.getDate(), fechaSalida.getDate());
+        cr.reservaControlAuto(hotel, fechaIngreso.getDate(), fechaSalida.getDate());
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

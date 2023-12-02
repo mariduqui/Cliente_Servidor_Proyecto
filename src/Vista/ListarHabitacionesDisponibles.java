@@ -170,9 +170,9 @@ public class ListarHabitacionesDisponibles extends javax.swing.JFrame {
     }//GEN-LAST:event_chkTodosActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        MenuUser mu = new MenuUser();
+        MenuAdmin ma = new MenuAdmin();
         this.setVisible(false);
-        mu.setVisible(true);
+        ma.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void chkTokyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTokyoActionPerformed

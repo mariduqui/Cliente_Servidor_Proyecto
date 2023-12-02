@@ -48,7 +48,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void btnIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrActionPerformed
         /*1 - Listar todos los hoteles de la cadena 
-        2 - Listar todas las habitaciones disponibles por hotel 
         3 - Registrar reservación a una persona automáticamente 
         4 - Registrar reservación a una persona manualmente 
         5 - Eliminar reservación de una persona 
@@ -61,7 +60,13 @@ public class MenuAdmin extends javax.swing.JFrame {
             ListarHabitacionesDisponibles lhd = new ListarHabitacionesDisponibles();
             this.setVisible(false);
             lhd.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("3 - Registrar reservación a una persona automáticamente")){
+            ReservarAdmin ra = new ReservarAdmin();
+            this.setVisible(false);
+            ra.setVisible(true);
         }
+        
+        //ReservarAdmin
     }//GEN-LAST:event_btnIrActionPerformed
 
     /**
