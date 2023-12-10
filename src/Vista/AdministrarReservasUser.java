@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.ControladorModificarReserva;
 import Controlador.ControladorMostrarReservas;
+import Modelo.MostrarReservasUser;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -47,12 +48,12 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         chkMarruecos = new javax.swing.JCheckBox();
         fechaSal = new com.toedter.calendar.JDateChooser();
         fechaIng = new com.toedter.calendar.JDateChooser();
-        txtIdReserva = new javax.swing.JTextField();
         btnEliminarReserva = new javax.swing.JButton();
         btnModFecha1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        cboIDRes = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,7 +119,6 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         getContentPane().add(chkMarruecos, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
         getContentPane().add(fechaSal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 160, -1));
         getContentPane().add(fechaIng, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 160, -1));
-        getContentPane().add(txtIdReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 140, -1));
 
         btnEliminarReserva.setText("Eliminar Reserva");
         btnEliminarReserva.addActionListener(new java.awt.event.ActionListener() {
@@ -145,16 +145,20 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         jLabel3.setText("Fecha Salida Modificada");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
+        getContentPane().add(cboIDRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 90, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModFecha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModFecha1ActionPerformed
         ControladorModificarReserva cmr = new ControladorModificarReserva();
-        cmr.modFechaUser(hotel, Integer.parseInt(txtIdReserva.getText()), fechaIng.getDate(), fechaSal.getDate());
+        cmr.modFechaUser(hotel, Integer.parseInt(cboIDRes.getSelectedItem().toString()), fechaIng.getDate(), fechaSal.getDate());
         
         ControladorMostrarReservas cmru  = new  ControladorMostrarReservas();
         cmru.MostrarReservasUser(tblReservas);
         
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_btnModFecha1ActionPerformed
 
     private void chkNYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkNYActionPerformed
@@ -164,6 +168,9 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             chkMarruecos.setSelected(false);
             chkTokyo.setSelected(false);
         }
+        
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_chkNYActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -177,8 +184,11 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             hotel = "Roma";
             chkNY.setSelected(false);
             chkMarruecos.setSelected(false);
-            chkTokyo.setSelected(false);
+            chkTokyo.setSelected(false);   
         }
+        
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_chkRomaActionPerformed
 
     private void chkMarruecosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkMarruecosActionPerformed
@@ -188,6 +198,9 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             chkRoma.setSelected(false);
             chkTokyo.setSelected(false);
         }
+        
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_chkMarruecosActionPerformed
 
     private void chkTokyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTokyoActionPerformed
@@ -197,14 +210,20 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
             chkRoma.setSelected(false);
             chkMarruecos.setSelected(false);
         }
+        
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_chkTokyoActionPerformed
 
     private void btnEliminarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarReservaActionPerformed
         ControladorModificarReserva cmr = new ControladorModificarReserva();
-        cmr.elimarReservaUser(hotel, Integer.parseInt(txtIdReserva.getText()));
+        cmr.elimarReservaUser(hotel, Integer.parseInt(cboIDRes.getSelectedItem().toString()));
         
         ControladorMostrarReservas cmru  = new  ControladorMostrarReservas();
         cmru.MostrarReservasUser(tblReservas);
+        
+        MostrarReservasUser mru = new MostrarReservasUser();
+        mru.listarReservasCBO(cboIDRes, hotel);
     }//GEN-LAST:event_btnEliminarReservaActionPerformed
 
 
@@ -244,6 +263,7 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarReserva;
     private javax.swing.JButton btnModFecha1;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JComboBox<String> cboIDRes;
     private javax.swing.JCheckBox chkMarruecos;
     private javax.swing.JCheckBox chkNY;
     private javax.swing.JCheckBox chkRoma;
@@ -256,6 +276,5 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblReservas;
-    private javax.swing.JTextField txtIdReserva;
     // End of variables declaration//GEN-END:variables
 }

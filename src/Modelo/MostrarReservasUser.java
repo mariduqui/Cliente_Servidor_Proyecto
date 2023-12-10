@@ -2,6 +2,9 @@
 package Modelo;
 
 import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -82,9 +85,143 @@ public class MostrarReservasUser {
         }catch(SQLException e){
             System.out.println(e);
         }finally{
-            tabla.setModel(modelo);
-            
+            tabla.setModel(modelo); 
         }
-  
+    }
+    
+    private ArrayList<Integer> reservasNY(){
+        Persona p = new Persona();
+        ArrayList<Integer> idsReservas = new ArrayList();
+        
+        Conexion con = new Conexion();
+        
+        String query = "SELECT idreserva FROM reservasNY WHERE idusuario = ?";
+        
+        try{
+            Connection cn = con.conectar();
+            
+            PreparedStatement ps = cn.prepareStatement(query);
+            ps.setInt(1, p.getId());
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idsReservas.add(rs.getInt(1));
+            }
+        }catch(SQLException e){
+            System.out.println("Error al recuperar las reservas " + e);
+        }
+        
+        return idsReservas; 
+    }
+    
+    private ArrayList<Integer> reservasRoma(){
+        Persona p = new Persona();
+        ArrayList<Integer> idsReservas = new ArrayList();
+        
+        Conexion con = new Conexion();
+        
+        String query = "SELECT idreserva FROM reservasRoma WHERE idusuario = ?";
+        
+        try{
+            Connection cn = con.conectar();
+            
+            PreparedStatement ps = cn.prepareStatement(query);
+            ps.setInt(1, p.getId());
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idsReservas.add(rs.getInt(1));
+            }
+        }catch(SQLException e){
+            System.out.println("Error al recuperar las reservas " + e);
+        }
+        
+        return idsReservas; 
+    }
+    
+    private ArrayList<Integer> reservasMarruecos(){
+        Persona p = new Persona();
+        ArrayList<Integer> idsReservas = new ArrayList();
+        
+        Conexion con = new Conexion();
+        
+        String query = "SELECT idreserva FROM reservasMarruecos WHERE idusuario = ?";
+        
+        try{
+            Connection cn = con.conectar();
+            
+            PreparedStatement ps = cn.prepareStatement(query);
+            ps.setInt(1, p.getId());
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idsReservas.add(rs.getInt(1));
+            }
+        }catch(SQLException e){
+            System.out.println("Error al recuperar las reservas " + e);
+        }
+        
+        return idsReservas; 
+    }
+    
+    private ArrayList<Integer> reservasTokyo(){
+        Persona p = new Persona();
+        ArrayList<Integer> idsReservas = new ArrayList();
+        
+        Conexion con = new Conexion();
+        
+        String query = "SELECT idreserva FROM reservasTokyo WHERE idusuario = ?";
+        
+        try{
+            Connection cn = con.conectar();
+            
+            PreparedStatement ps = cn.prepareStatement(query);
+            ps.setInt(1, p.getId());
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                idsReservas.add(rs.getInt(1));
+            }
+        }catch(SQLException e){
+            System.out.println("Error al recuperar las reservas " + e);
+        }
+        
+        return idsReservas; 
+    }
+    
+    public void listarReservasCBO(JComboBox cbo, String hotel){
+        ArrayList<Integer> idsReservas = new ArrayList();
+        
+        
+        if(hotel.equals("NY")){
+           for(int i : reservasNY()){
+               idsReservas.add(i);
+           } 
+        }
+        
+        if(hotel.equals("Roma")){
+           for(int i : reservasRoma()){
+               idsReservas.add(i);
+           } 
+        }
+        
+        if(hotel.equals("Marruecos")){
+           for(int i : reservasMarruecos()){
+               idsReservas.add(i);
+           } 
+        }
+        
+        if(hotel.equals("Tokyo")){
+           for(int i : reservasTokyo()){
+               idsReservas.add(i);
+           } 
+        }
+        
+        DefaultComboBoxModel dcbom = new DefaultComboBoxModel(idsReservas.toArray());
+        cbo.setModel(dcbom);
     }
 }

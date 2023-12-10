@@ -32,7 +32,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel12.setText("Bienvenido a los Hoteles Continental");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 10, 530, 90));
 
-        cboOpcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Listar todos los hoteles de la cadena ", "2 - Listar todas las habitaciones disponibles por hotel ", "3 - Registrar reservación a una persona automáticamente ", "4 - Registrar reservación a una persona manualmente ", "5 - Eliminar reservación de una persona ", "6 - Eliminar todas las reservaciones por hotel  ", "7 - Buscar persona por número de cédula/pasaporte ", "8 - Validar disponibilidad de una habitación en un hotel ", "9 - Salir" }));
+        cboOpcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Listar todos los hoteles de la cadena ", "2 - Listar todas las habitaciones disponibles por hotel ", "3 - Registrar reservación a una persona ", "4 - Eliminar reservación de una persona ", "5 - Eliminar todas las reservaciones por hotel  ", "6 - Buscar persona por número de cédula/pasaporte ", "7 - Validar disponibilidad de una habitación en un hotel ", " " }));
         getContentPane().add(cboOpcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 350, -1));
 
         btnIr.setText("IR");
@@ -48,9 +48,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void btnIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrActionPerformed
         /*1 - Listar todos los hoteles de la cadena 
-        3 - Registrar reservación a una persona automáticamente 
-        4 - Registrar reservación a una persona manualmente 
-        5 - Eliminar reservación de una persona 
         6 - Eliminar todas las reservaciones por hotel  
         7 - Buscar persona por número de cédula/pasaporte 
         8 - Validar disponibilidad de una habitación en un hotel 
@@ -60,13 +57,17 @@ public class MenuAdmin extends javax.swing.JFrame {
             ListarHabitacionesDisponibles lhd = new ListarHabitacionesDisponibles();
             this.setVisible(false);
             lhd.setVisible(true);
-        }if(cboOpcion.getSelectedItem().toString().contains("3 - Registrar reservación a una persona automáticamente")){
+        }if(cboOpcion.getSelectedItem().toString().contains("3 - Registrar reservación a una persona ")){
             ReservarAdmin ra = new ReservarAdmin();
             this.setVisible(false);
             ra.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("4 - Eliminar reservación de una persona ")){
+            EliminarReservasPersonaAdmin erpa = new EliminarReservasPersonaAdmin();
+            this.setVisible(false);
+            erpa.setVisible(true);
         }
         
-        //ReservarAdmin
+        //EliminarReservasPersonaAdmin
     }//GEN-LAST:event_btnIrActionPerformed
 
     /**

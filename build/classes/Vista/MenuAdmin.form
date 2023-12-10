@@ -45,16 +45,15 @@
     <Component class="javax.swing.JComboBox" name="cboOpcion">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="9">
+          <StringArray count="8">
             <StringItem index="0" value="1 - Listar todos los hoteles de la cadena "/>
             <StringItem index="1" value="2 - Listar todas las habitaciones disponibles por hotel "/>
-            <StringItem index="2" value="3 - Registrar reservaci&#xf3;n a una persona autom&#xe1;ticamente "/>
-            <StringItem index="3" value="4 - Registrar reservaci&#xf3;n a una persona manualmente "/>
-            <StringItem index="4" value="5 - Eliminar reservaci&#xf3;n de una persona "/>
-            <StringItem index="5" value="6 - Eliminar todas las reservaciones por hotel  "/>
-            <StringItem index="6" value="7 - Buscar persona por n&#xfa;mero de c&#xe9;dula/pasaporte "/>
-            <StringItem index="7" value="8 - Validar disponibilidad de una habitaci&#xf3;n en un hotel "/>
-            <StringItem index="8" value="9 - Salir"/>
+            <StringItem index="2" value="3 - Registrar reservaci&#xf3;n a una persona "/>
+            <StringItem index="3" value="4 - Eliminar reservaci&#xf3;n de una persona "/>
+            <StringItem index="4" value="5 - Eliminar todas las reservaciones por hotel  "/>
+            <StringItem index="5" value="6 - Buscar persona por n&#xfa;mero de c&#xe9;dula/pasaporte "/>
+            <StringItem index="6" value="7 - Validar disponibilidad de una habitaci&#xf3;n en un hotel "/>
+            <StringItem index="7" value=" "/>
           </StringArray>
         </Property>
       </Properties>
