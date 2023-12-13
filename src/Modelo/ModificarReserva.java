@@ -149,7 +149,7 @@ public class ModificarReserva {
         }  
     }
     
-    private void actualizarDisponibilidadHabitacionesNY(ArrayList<Integer> idsReservas){
+    public void actualizarDisponibilidadHabitacionesNY(ArrayList<Integer> idsReservas){
         Conexion con = new Conexion();
         
         String query = "UPDATE habitacionesNY SET disponible = true WHERE idHab = ?";
@@ -225,7 +225,7 @@ public class ModificarReserva {
         }  
     }
     
-    private void actualizarDisponibilidadHabitacionesRoma(ArrayList<Integer> idsReservas){
+    public void actualizarDisponibilidadHabitacionesRoma(ArrayList<Integer> idsReservas){
         Conexion con = new Conexion();
         
         String query = "UPDATE habitacionesRoma SET disponible = true WHERE idHab = ?";
@@ -301,7 +301,7 @@ public class ModificarReserva {
         }  
     }
     
-    private void actualizarDisponibilidadHabitacionesMarruecos(ArrayList<Integer> idsReservas){
+    public void actualizarDisponibilidadHabitacionesMarruecos(ArrayList<Integer> idsReservas){
         Conexion con = new Conexion();
         
         String query = "UPDATE habitacionesMarruecos SET disponible = true WHERE idHab = ?";
@@ -377,7 +377,7 @@ public class ModificarReserva {
         }  
     }
     
-    private void actualizarDisponibilidadHabitacionesTokyo(ArrayList<Integer> idsReservas){
+    public void actualizarDisponibilidadHabitacionesTokyo(ArrayList<Integer> idsReservas){
         Conexion con = new Conexion();
         
         String query = "UPDATE habitacionesTokyo SET disponible = true WHERE idHab = ?";
@@ -490,4 +490,4 @@ public class ModificarReserva {
         eliminarTodasReservasClienteTokyo(p.getId());
         
     }
-}
+} 

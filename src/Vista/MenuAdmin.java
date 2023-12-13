@@ -57,17 +57,21 @@ public class MenuAdmin extends javax.swing.JFrame {
             ListarHabitacionesDisponibles lhd = new ListarHabitacionesDisponibles();
             this.setVisible(false);
             lhd.setVisible(true);
-        }if(cboOpcion.getSelectedItem().toString().contains("3 - Registrar reservación a una persona ")){
+        }if(cboOpcion.getSelectedItem().toString().contains("3 - Registrar reservación a una persona")){
             ReservarAdmin ra = new ReservarAdmin();
             this.setVisible(false);
             ra.setVisible(true);
-        }if(cboOpcion.getSelectedItem().toString().contains("4 - Eliminar reservación de una persona ")){
+        }if(cboOpcion.getSelectedItem().toString().contains("4 - Eliminar reservación de una persona")){
             EliminarReservasPersonaAdmin erpa = new EliminarReservasPersonaAdmin();
             this.setVisible(false);
             erpa.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("5 - Eliminar todas las reservaciones por hotel")){
+            EliminarReservasHotel erh = new EliminarReservasHotel();
+            this.setVisible(false);
+            erh.setVisible(true);
         }
         
-        //EliminarReservasPersonaAdmin
+        //EliminarReservasHotel
     }//GEN-LAST:event_btnIrActionPerformed
 
     /**
