@@ -3,6 +3,7 @@ package Vista;
 
 import Controlador.ControladorCBO;
 import Controlador.ControladorRegistro;
+import Modelo.Reloj;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -27,6 +28,9 @@ public class RegistroClientesAdmin extends javax.swing.JFrame {
         
         Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
         btnVolver.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver.getWidth(), btnVolver.getHeight(), Image.SCALE_SMOOTH)));
+        
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
     
@@ -62,6 +66,7 @@ public class RegistroClientesAdmin extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         txtPass1 = new javax.swing.JPasswordField();
         txtPass2 = new javax.swing.JPasswordField();
+        lblReloj = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -141,6 +146,7 @@ public class RegistroClientesAdmin extends javax.swing.JFrame {
         getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 60, 30));
         getContentPane().add(txtPass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 240, 30));
         getContentPane().add(txtPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 240, 30));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 90, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -184,6 +190,7 @@ public class RegistroClientesAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPass2;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblReloj;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTipoID;
     private javax.swing.JLabel lblTitulo;

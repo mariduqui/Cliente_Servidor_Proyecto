@@ -1,6 +1,8 @@
 
 package Vista;
 
+import Modelo.Reloj;
+
 /**
  *
  * @author alede
@@ -12,6 +14,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         initComponents();
         this.setSize(500, 300);
         this.setLocationRelativeTo(null);
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
     
@@ -22,6 +26,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         cboOpcion = new javax.swing.JComboBox<>();
         btnIr = new javax.swing.JButton();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -30,9 +35,9 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 153, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Bienvenido a los Hoteles Continental");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 10, 530, 90));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 530, 90));
 
-        cboOpcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Listar todos los hoteles de la cadena ", "2 - Listar todas las habitaciones disponibles por hotel ", "3 - Registrar reservación a una persona ", "4 - Eliminar reservación de una persona ", "5 - Eliminar todas las reservaciones por hotel  ", "6 - Buscar persona por número de cédula/pasaporte ", "7 - Validar disponibilidad de una habitación en un hotel ", " " }));
+        cboOpcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 - Listar todos los hoteles de la cadena ", "2 - Listar todas las habitaciones disponibles por hotel ", "3 - Registrar reservación a una persona ", "4 - Eliminar reservación de una persona ", "5 - Eliminar todas las reservaciones por hotel  ", "6 - Buscar persona por número de cédula/pasaporte ", "7 - Validar disponibilidad de una habitación en un hotel ", "8 - Crear hotel" }));
         getContentPane().add(cboOpcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 350, -1));
 
         btnIr.setText("IR");
@@ -42,16 +47,14 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnIr, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 100, 30));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 80, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrActionPerformed
         /*1 - Listar todos los hoteles de la cadena 
-        6 - Eliminar todas las reservaciones por hotel  
-        7 - Buscar persona por número de cédula/pasaporte 
-        8 - Validar disponibilidad de una habitación en un hotel 
-        9 - Salir*/
+        */
         
         if(cboOpcion.getSelectedItem().toString().contains("2 - Listar todas las habitaciones disponibles por hotel")){
             ListarHabitacionesDisponibles lhd = new ListarHabitacionesDisponibles();
@@ -69,9 +72,23 @@ public class MenuAdmin extends javax.swing.JFrame {
             EliminarReservasHotel erh = new EliminarReservasHotel();
             this.setVisible(false);
             erh.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("6 - Buscar persona por número de cédula/pasaporte")){
+            BuscarPersonaAdmin bpa = new BuscarPersonaAdmin();
+            this.setVisible(false);
+            bpa.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("7 - Validar disponibilidad de una habitación en un hotel")){
+            ValidarDisponibilidadHabitacion vdh = new ValidarDisponibilidadHabitacion();
+            this.setVisible(false);
+            vdh.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("1 - Listar todos los hoteles de la cadena")){
+            ListaHoteles lh = new ListaHoteles();
+            this.setVisible(false);
+            lh.setVisible(true);
+        }if(cboOpcion.getSelectedItem().toString().contains("8 - Crear hotel")){
+            CrearHotel ch = new CrearHotel();
+            this.setVisible(false);
+            ch.setVisible(true);
         }
-        
-        //EliminarReservasHotel
     }//GEN-LAST:event_btnIrActionPerformed
 
     /**
@@ -113,5 +130,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnIr;
     private javax.swing.JComboBox<String> cboOpcion;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel lblReloj;
     // End of variables declaration//GEN-END:variables
 }

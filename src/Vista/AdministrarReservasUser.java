@@ -7,6 +7,7 @@ package Vista;
 import Controlador.ControladorModificarReserva;
 import Controlador.ControladorMostrarReservas;
 import Modelo.MostrarReservasUser;
+import Modelo.Reloj;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -31,6 +32,9 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
 
         Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
         btnVolver.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver.getWidth(), btnVolver.getHeight(), Image.SCALE_SMOOTH)));
+        
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
  
@@ -54,6 +58,7 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         cboIDRes = new javax.swing.JComboBox<>();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,7 +67,7 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 153, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Modificar una Reserva");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 350, 40));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 350, 40));
 
         tblReservas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,6 +151,9 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
         getContentPane().add(cboIDRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 90, -1));
+
+        lblReloj.setText("reloj");
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,6 +283,7 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblReloj;
     private javax.swing.JTable tblReservas;
     // End of variables declaration//GEN-END:variables
 }

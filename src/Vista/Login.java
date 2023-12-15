@@ -5,7 +5,13 @@
 package Vista;
 
 import Controlador.ControladorLogin;
+import Modelo.Reloj;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -25,6 +31,8 @@ public class Login extends javax.swing.JFrame {
         
         this.setSize(365, 550);
         this.setLocationRelativeTo(null);
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
     /**
@@ -45,6 +53,7 @@ public class Login extends javax.swing.JFrame {
         cboTipo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnLogIn1 = new javax.swing.JButton();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,6 +94,9 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 130, 40));
 
+        lblReloj.setText("reloj");
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -108,10 +120,7 @@ public class Login extends javax.swing.JFrame {
             ma.setVisible(true);
         }
     }//GEN-LAST:event_btnLogIn1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -153,6 +162,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblReloj;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables

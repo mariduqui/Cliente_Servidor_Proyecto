@@ -1,6 +1,7 @@
 
 package Vista;
 
+import Modelo.Reloj;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -21,6 +22,9 @@ public class MenuUser extends javax.swing.JFrame {
         
         Image interiorHotel = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/InteriorHotel.jpg"));
         frameFoto.setIcon(new ImageIcon(interiorHotel.getScaledInstance(frameFoto.getWidth(), frameFoto.getHeight(), Image.SCALE_SMOOTH)));
+        
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
     
@@ -32,6 +36,7 @@ public class MenuUser extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         frameFoto = new javax.swing.JButton();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,8 +61,9 @@ public class MenuUser extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 153, 153));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Bienvenido a los Hoteles Continental");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 530, 90));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 530, 90));
         getContentPane().add(frameFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 430, 250));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,5 +118,6 @@ public class MenuUser extends javax.swing.JFrame {
     private javax.swing.JButton frameFoto;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel lblReloj;
     // End of variables declaration//GEN-END:variables
 }

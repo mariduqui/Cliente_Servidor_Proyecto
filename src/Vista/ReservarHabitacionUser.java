@@ -2,6 +2,7 @@
 package Vista;
 
 import Controlador.ControladorReserva;
+import Modelo.Reloj;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -34,7 +35,8 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
         btnVolver.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver.getWidth(), btnVolver.getHeight(), Image.SCALE_SMOOTH)));
         
-        
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
     }
 
     
@@ -59,6 +61,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
         lblHotel = new javax.swing.JLabel();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,6 +141,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
 
         lblHotel.setText("Reservar en el Hotel Continental de:");
         getContentPane().add(lblHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -222,6 +226,7 @@ public class ReservarHabitacionUser extends javax.swing.JFrame {
     private javax.swing.JLabel lblIngreso1;
     private javax.swing.JLabel lblMarruecos1;
     private javax.swing.JLabel lblNY1;
+    private javax.swing.JLabel lblReloj;
     private javax.swing.JLabel lblRoma1;
     private javax.swing.JLabel lblSalida;
     private javax.swing.JLabel lblTokyo1;

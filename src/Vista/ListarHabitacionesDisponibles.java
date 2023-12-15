@@ -4,6 +4,7 @@ package Vista;
 import Controlador.ControladorMostrarHabitaciones;
 import Modelo.Conexion;
 import Modelo.ListarHabitaciones;
+import Modelo.Reloj;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -29,6 +30,9 @@ public class ListarHabitacionesDisponibles extends javax.swing.JFrame {
         
         lh.listarHabTodos(tblHab);
         
+        Reloj r = new Reloj();
+        r.reloj(lblReloj);
+        
     }
 
     
@@ -46,6 +50,7 @@ public class ListarHabitacionesDisponibles extends javax.swing.JFrame {
         btnVolver = new javax.swing.JButton();
         chkTokyo = new javax.swing.JCheckBox();
         btnListar = new javax.swing.JButton();
+        lblReloj = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -125,6 +130,9 @@ public class ListarHabitacionesDisponibles extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, -1, -1));
+
+        lblReloj.setText("reloj");
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -233,6 +241,7 @@ public class ListarHabitacionesDisponibles extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkTokyo;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblReloj;
     private javax.swing.JTable tblHab;
     // End of variables declaration//GEN-END:variables
 }
