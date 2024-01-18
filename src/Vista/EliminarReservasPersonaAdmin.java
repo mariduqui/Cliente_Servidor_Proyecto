@@ -394,6 +394,8 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
             chkRoma.setVisible(true);
             chkMarruecos.setVisible(true);
             chkTokyo.setVisible(true);
+            
+            cboIDRes.setVisible(true);
         }
     }//GEN-LAST:event_btnEliminarUnaActionPerformed
 

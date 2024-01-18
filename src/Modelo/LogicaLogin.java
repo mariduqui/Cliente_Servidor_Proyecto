@@ -2,6 +2,7 @@
 package Modelo;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,6 +39,10 @@ public class LogicaLogin {
             if(tipo.equalsIgnoreCase("Admin") && set.next()){
                 existe = true;
                 Admin a = new Admin(set.getString(4), set.getString(5));
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña no encontrado");
             }
 
             cn.close();
