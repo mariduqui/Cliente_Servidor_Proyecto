@@ -4,6 +4,8 @@ package Controlador;
 import Modelo.LogicaReserva;
 import Modelo.Persona;
 import com.toedter.calendar.JCalendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -25,14 +27,33 @@ public class ControladorReserva {
         return fecha;
     }
     
+    public Date verificarFechasIngActual(Date fechaIng, Date fechaActual){
+        DateFormat formateadorFecha = new SimpleDateFormat("dd-MM-yyyy");
+        
+        var a = formateadorFecha.format(fechaIng);
+        
+        if(formateadorFecha.format(fechaIng).equals(formateadorFecha.format(fechaActual))){
+            return fechaActual;
+        }
+        
+        return fechaIng;
+    }
+    
     public boolean reservaControlAuto(String hotel, Date fechaIng, Date fechaSal){
+        
         boolean reservado = false;
+        
+        if(!verificarDatos(hotel, fechaIng, fechaSal)){
+            return reservado;
+        }
         
         Date fechaActualDosMeses = new Date(System.currentTimeMillis());
         Date fechaActual = new Date(System.currentTimeMillis());
         
         fechaActualDosMeses.setMonth(fechaActualDosMeses.getMonth() + 02);
-
+        
+        fechaIng = verificarFechasIngActual(fechaIng, fechaActual);
+        
         if(fechaIng.after(fechaActualDosMeses)){
             JOptionPane.showMessageDialog(null, "Solo puede hacer reservas con menos de 2 meses.");
         }else if(fechaSal.before(fechaIng)){
@@ -52,10 +73,16 @@ public class ControladorReserva {
     public boolean reservaManual(String hotel, Date fechaIng, Date fechaSal, int numHab){
         boolean reservado = false;
         
+        if(!verificarDatos(hotel, fechaIng, fechaSal)){
+            return reservado;
+        }
+        
         Date fechaActualDosMeses = new Date(System.currentTimeMillis());
         Date fechaActual = new Date(System.currentTimeMillis());
         
         fechaActualDosMeses.setMonth(fechaActualDosMeses.getMonth() + 02);
+        
+        fechaIng = verificarFechasIngActual(fechaIng, fechaActual);
 
         if(fechaIng.after(fechaActualDosMeses)){
             JOptionPane.showMessageDialog(null, "Solo puede hacer reservas con menos de 2 meses.");
@@ -73,6 +100,23 @@ public class ControladorReserva {
         return reservado; 
     }
     
-    
+    private boolean verificarDatos(String hotel, Date fechaIng, Date fechaSal){
+        
+        if(hotel.equals("")){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un hotel para poder reservar.");
+            return false;
+        }
+        
+        if(fechaIng == null){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fecha de ingreso.");
+            return false;
+        }
+        
+        if(fechaSal == null){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una fecha de salida");
+            return false;
+        }
+        return true;
+    }
     
 }

@@ -58,7 +58,7 @@ public class ValidarDisponibilidadHabitacion extends javax.swing.JFrame {
         int width = 20; // specify desired width
         int height = 20; // specify desired height
         Image iconoAg = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/volver.jpg"));
-        btnVolver1.setIcon(new ImageIcon(iconoAg.getScaledInstance(width, height, Image.SCALE_SMOOTH)));
+        btnVolver1.setIcon(new ImageIcon(iconoAg.getScaledInstance(btnVolver1.getWidth(), btnVolver1.getHeight(), Image.SCALE_SMOOTH)));
     }
 
     

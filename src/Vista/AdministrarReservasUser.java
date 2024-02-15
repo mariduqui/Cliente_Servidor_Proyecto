@@ -153,7 +153,7 @@ public class AdministrarReservasUser extends javax.swing.JFrame {
         getContentPane().add(cboIDRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 90, -1));
 
         lblReloj.setText("reloj");
-        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, -1));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

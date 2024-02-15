@@ -52,7 +52,7 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
         tblReservas.setModel(modeloR);   
         
         Reloj r = new Reloj();
-        r.reloj(lblReloj);
+        r.reloj(lblReloj2);
     }
 
     
@@ -80,7 +80,7 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblReservas = new javax.swing.JTable();
         lblReloj = new javax.swing.JLabel();
-        lblReloj1 = new javax.swing.JLabel();
+        lblReloj2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,7 +190,7 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
 
         lblReloj.setText("reloj");
 
-        lblReloj1.setText("reloj");
+        lblReloj2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -204,8 +204,8 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
                         .addGap(246, 246, 246)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblReloj1)
-                        .addGap(59, 59, 59))
+                        .addComponent(lblReloj2)
+                        .addGap(72, 72, 72))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,7 +265,7 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
                     .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblReloj1)))
+                        .addComponent(lblReloj2)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -481,7 +481,7 @@ public class EliminarReservasPersonaAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIDReserva;
     private javax.swing.JLabel lblReloj;
-    private javax.swing.JLabel lblReloj1;
+    private javax.swing.JLabel lblReloj2;
     private javax.swing.JTable tblReservas;
     private javax.swing.JTable tblUser;
     private javax.swing.JTextField txtID;

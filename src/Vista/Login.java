@@ -95,7 +95,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(btnLogIn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 130, 40));
 
         lblReloj.setText("reloj");
-        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

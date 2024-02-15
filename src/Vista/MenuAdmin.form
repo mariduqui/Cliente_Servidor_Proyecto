@@ -79,10 +79,13 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblReloj">
+    <Component class="javax.swing.JLabel" name="lblReloj2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="380" y="10" width="80" height="20"/>
+          <AbsoluteConstraints x="410" y="10" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

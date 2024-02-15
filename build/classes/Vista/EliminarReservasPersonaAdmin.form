@@ -31,8 +31,8 @@
                       <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       <Component id="jLabel12" min="-2" pref="350" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblReloj1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="lblReloj2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -114,7 +114,7 @@
                   <Component id="btnVolver" min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel12" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="lblReloj1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblReloj2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -322,9 +322,9 @@
         <Property name="text" type="java.lang.String" value="reloj"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblReloj1">
+    <Component class="javax.swing.JLabel" name="lblReloj2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="reloj"/>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
     </Component>
   </SubComponents>

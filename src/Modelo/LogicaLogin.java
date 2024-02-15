@@ -33,12 +33,14 @@ public class LogicaLogin {
             if(tipo.equalsIgnoreCase("Usuario") && set.next()){
                 existe = true;
                 int id = set.getInt(1);
-                Persona p = new Persona(id, set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10));  
+                Persona p = new Persona(id, set.getString(2), set.getString(3), set.getString(4), set.getString(5), set.getString(6), set.getString(7), set.getString(8), set.getString(9), set.getString(10)); 
+                return existe;
             }
   
             if(tipo.equalsIgnoreCase("Admin") && set.next()){
                 existe = true;
                 Admin a = new Admin(set.getString(4), set.getString(5));
+                return existe;
             }
             
             else{

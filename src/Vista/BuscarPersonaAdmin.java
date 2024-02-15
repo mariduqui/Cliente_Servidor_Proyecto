@@ -24,7 +24,7 @@ public class BuscarPersonaAdmin extends javax.swing.JFrame {
         initComponents();
         
         Reloj r = new Reloj();
-        r.reloj(lblReloj);
+        r.reloj(lblReloj1);
         
         this.setSize(1050, 400);
         this.setLocationRelativeTo(null);

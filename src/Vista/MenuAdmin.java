@@ -15,7 +15,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         this.setSize(500, 300);
         this.setLocationRelativeTo(null);
         Reloj r = new Reloj();
-        r.reloj(lblReloj);
+        r.reloj(lblReloj2);
     }
 
     
@@ -26,7 +26,7 @@ public class MenuAdmin extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         cboOpcion = new javax.swing.JComboBox<>();
         btnIr = new javax.swing.JButton();
-        lblReloj = new javax.swing.JLabel();
+        lblReloj2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,7 +47,9 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnIr, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 100, 30));
-        getContentPane().add(lblReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 80, 20));
+
+        lblReloj2.setText("jLabel1");
+        getContentPane().add(lblReloj2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,6 +132,6 @@ public class MenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnIr;
     private javax.swing.JComboBox<String> cboOpcion;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel lblReloj;
+    private javax.swing.JLabel lblReloj2;
     // End of variables declaration//GEN-END:variables
 }
