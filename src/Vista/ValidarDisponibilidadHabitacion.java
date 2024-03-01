@@ -3,6 +3,7 @@ package Vista;
 
 import Modelo.BuscarHabitacion;
 import Modelo.Reloj;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
@@ -125,7 +126,19 @@ public class ValidarDisponibilidadHabitacion extends javax.swing.JFrame {
         ));
         tblHabitacion.setViewportView(tblHab);
 
-        jLabel1.setText("ID Habitación (Ejemplo 1101)");
+        txtIDHab.setText("Ejemplo: 1101");
+        txtIDHab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtIDHabFocusGained(evt);
+            }
+        });
+        txtIDHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDHabActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("ID Habitación");
 
         btnVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,18 +228,18 @@ public class ValidarDisponibilidadHabitacion extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txtIDHab, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(btnBuscarUser)
                                         .addGroup(layout.createSequentialGroup()
-                                            .addComponent(chkNY)
-                                            .addGap(22, 22, 22)
-                                            .addComponent(chkRoma)
-                                            .addGap(37, 37, 37)
-                                            .addComponent(chkMarruecos)
-                                            .addGap(42, 42, 42)
-                                            .addComponent(chkTokyo)))))
+                                            .addComponent(jLabel1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnBuscarUser)))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(chkNY)
+                                    .addGap(22, 22, 22)
+                                    .addComponent(chkRoma)
+                                    .addGap(37, 37, 37)
+                                    .addComponent(chkMarruecos)
+                                    .addGap(42, 42, 42)
+                                    .addComponent(chkTokyo)))
                             .addComponent(tblHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 980, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -241,9 +254,9 @@ public class ValidarDisponibilidadHabitacion extends javax.swing.JFrame {
                         .addComponent(btnVolver1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(btnBuscarUser))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscarUser)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtIDHab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,6 +331,16 @@ public class ValidarDisponibilidadHabitacion extends javax.swing.JFrame {
         this.setVisible(false);
         ma.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
+
+    private void txtIDHabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIDHabFocusGained
+        // TODO add your handling code here:
+        txtIDHab.setText("");
+        txtIDHab.setForeground(Color.BLACK);
+    }//GEN-LAST:event_txtIDHabFocusGained
+
+    private void txtIDHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDHabActionPerformed
 
     
     public static void main(String args[]) {
